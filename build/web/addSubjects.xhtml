@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c ="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="css/styles.css" />
+        <title>Ask||Questions</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form  id="addQuestionForm">
+                <div class="header">Java Questions</div>
+                <table  style="width:100%;height:600px">
+                    <tr>
+                       <td class="menu">
+                            <a href="login.xhtml">Admin</a>
+                            <br/><br/><p/>
+                            <p:link href="home.xhtml" value="Home"/>
+                            <p/>
+                            <p:link href="addSubjects.xhtml" value="Subjects"/>
+                            <p/>
+                            <p:link href="addSubQuestions.xhtml" value="Online Quize"/>
+                            <p/>
+                            <p:link href="aboutUs.xhtml" value="About Us"/>
+
+                        </td>
+                        <td style="vertical-align: top">
+                            <h:form>
+                                <p/>
+                                <p/>
+                                <p/>
+                                <p:messages id="msg" closable="true" showDetail="true"></p:messages>
+                                <h:outputText value="Enter a Subject Name : "></h:outputText>
+                                <p:inputText value="#{subjectMB.sub.subName}" required="true"></p:inputText>
+                                <p/>
+                                <p/>
+                                <p/>
+                                <p:commandButton actionListener="#{subjectMB.addSubject()}" value="add" update="msg"></p:commandButton>
+                            </h:form>
+                        </td>
+                    </tr>
+                </table>
+            </h:form>
+            <footer>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <p class="pull-left">Copyright © 2015 Question and Answer Sit. All rights reserved.</p>
+                            <p class="pull-right">Designed by <span><a target="_blank" href="#">Java Questions</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </f:view>
+    </h:body>
+</html>
+

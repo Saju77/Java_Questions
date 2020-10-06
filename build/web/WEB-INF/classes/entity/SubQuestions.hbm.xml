@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 10, 2020 10:50:08 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.SubQuestions" table="sub_questions" catalog="java_questions" optimistic-lock="version">
+        <id name="subQuesId" type="java.lang.Integer">
+            <column name="sub_ques_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="subjects" class="entity.Subjects" fetch="select">
+            <column name="sub_id" not-null="true" />
+        </many-to-one>
+        <property name="subQuesText" type="string">
+            <column name="sub_ques_text" length="500" not-null="true" />
+        </property>
+        <property name="opt1" type="string">
+            <column name="opt_1" length="100" not-null="true" />
+        </property>
+        <property name="opt2" type="string">
+            <column name="opt_2" length="100" not-null="true" />
+        </property>
+        <property name="opt3" type="string">
+            <column name="opt_3" length="100" not-null="true" />
+        </property>
+        <property name="opt4" type="string">
+            <column name="opt_4" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

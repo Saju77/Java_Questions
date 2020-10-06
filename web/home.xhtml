@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <link rel="stylesheet" href="css/styles.css" />
+                <title>Java||Questions</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <h:form  id="addTopicForm">
+                <div class="header">Java Questions</div>
+                <table  style="width:100%;height:600px">
+                    <tr>
+                        <td class="menu">
+                            <a href="login.xhtml">Admin</a>
+                            <br/><br/><p/>
+                            <p:link href="home.xhtml" value="Home"/>
+                            <p/>
+                            <p:link href="addSubjects.xhtml" value="Subjects"/>
+                            <p/>
+                            <p:link href="addSubQuestions.xhtml" value="Online Quize"/>
+                            <p/>
+                            <p:link href="aboutUs.xhtml" value="About Us"/>
+                        </td>
+                        <td style="vertical-align: top">
+                            <p/>
+                            <p:button value="Ask a Question" href="addAskQuestion.xhtml" style="margin-right:20px;">
+                                <f:param name="#" value="#" />
+                            </p:button>
+                            <p/>
+                            <h:form>
+                                <p:messages id="msgAns" closable="true" showDetail="true"></p:messages>
+                                <p:dataGrid var="askQ" value="#{displayAskQuestionsMB.allAskQues}" id="askQu" columns="1" rows="5" paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}" rowsPerPageTemplate="6,12,16">
+                                    <p:messages id="msgAns" closable="true" showDetail="true"></p:messages>
+                                    <p> <b><h:outputLabel value="Question : "></h:outputLabel></b>                                    
+                                        <b> <h:outputText  value="#{askQ.description}"/></b></p>
+                                    <br/>
+                                    <p>
+                                        <h:outputLabel value="Questioned by : "></h:outputLabel>                                  
+                                        <h:outputText value="#{askQ.userEmail}"/>
+                                    </p>                                        
+                                    <p:button value="Post your Answer" href="addAskQuesAns.xhtml" style="margin-right:20px;"/>
+                                    <p/>
+<!--                                    <p:button value="Answers" href="AskQuesAnswers.xhtml" style="margin-right:20px;"/>-->
+                                    <br/>
+                                    <br/>
+                                    <br/>                                    
+                                </p:dataGrid> 
+                            </h:form>
+                        </td>
+                    </tr>
+                </table>
+            </h:form>
+            <footer>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <p class="pull-left">Copyright © 2015 Question and Answer Sit. All rights reserved.</p>
+                            <p class="pull-right">Designed by <span><a target="_blank" href="#">Java Questions</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </h:body>
+    </f:view>
+</html>
+
